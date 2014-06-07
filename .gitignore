@@ -1,2 +1,11 @@
 # Compiled
 *.elc
+.cask
+elpa
+places
+*~
+projectile*
+session*
+ac-comp*
+eshell
+url
