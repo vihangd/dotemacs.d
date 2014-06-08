@@ -74,9 +74,6 @@
 (setq exec-path (append exec-path '("/home/vihang/.linuxbrew/bin")))
 
 (setenv "GROOVY_HOME" "/home/vihang/.linuxbrew/opt/groovy/libexec")
-;(setenv "PATH" (shell-command-to-string "bash -i -c 'echo -n $PATH'"))
-;(setq exec-path (split-string (getenv "PATH") ":")
-;;(setenv "PATH" (concat (getenv "PATH") "/home/vihang/.linuxbrew/bin"))
 
 ; plantuml
 
