@@ -18,9 +18,6 @@
 ;; Dont show the GNU splash screen
 ;;(setq inhibit-startup-message t)
 
-;; for powerline
-(require 'cl)
-
 ;; setup packages
 (require 'package)
 ;; (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
