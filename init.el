@@ -20,14 +20,6 @@
 
 ;; setup packages
 (require 'package)
-;; (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-;;                          ("marmalade" . "http://marmalade-repo.org/packages/")
-;;                          ("melpa-melpa" . "http://melpa.milkbox.net/packages/")))
-
-;; (add-to-list 'package-archives
-;;              '("marmalade" . "http://marmalade-repo.org/packages/") t)
-;; (add-to-list 'package-archives
-;;   '("melpa" . "http://melpa.milkbox.net/packages/") t)
 ;; (add-to-list 'package-archives
 ;;   '("geiser" . "http://mirror.veriportal.com/savannah//geiser/packages/"))
 
