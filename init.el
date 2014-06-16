@@ -3,8 +3,9 @@
 ;;; Code:
 
 ;font
-(set-frame-font "Inconsolata-14")
-;(set-default-font "Source Code Pro-12")
+;(set-frame-font "Inconsolata-14")
+(set-default-font "Source Code Pro-13")
+;(set-default-font "Dejavu Sans Mono-12")
 
 ;; taken from starter-kit
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -39,7 +40,7 @@
 (add-hook 'cider-repl-mode-hook 'ac-nrepl-setup)
 (add-hook 'cider-mode-hook 'ac-nrepl-setup)
 (eval-after-load "auto-complete"
-'(add-to-list 'ac-modes 'cider-mode))
+  '(add-to-list 'ac-modes 'cider-mode))
 
 ;; discover
 (require 'discover)
