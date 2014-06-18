@@ -33,6 +33,30 @@
 ;; recentf-mode
 (recentf-mode 1)
 
+;; auto-complete
+(require 'auto-complete-config)
+ 
+(set-default 'ac-sources
+             '(ac-source-abbrev
+               ac-source-dictionary
+               ac-source-yasnippet
+               ac-source-words-in-buffer
+               ac-source-words-in-same-mode-buffers
+               ac-source-semantic))
+ 
+(ac-config-default)
+ 
+(dolist (m '(c-mode c++-mode java-mode))
+  (add-to-list 'ac-modes m))
+ 
+(global-auto-complete-mode t)
+
+
+;; flyspell
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
+(add-hook 'text-mode-hook 'turn-on-flyspell)
+(ac-flyspell-workaround)
+
 ;; clojure
 (require 'cider)
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
@@ -120,14 +144,14 @@
 ;;         (add-to-list 'speedbar-frame-parameters '(left . 0))))
 ;; (sr-speedbar-open)
 
-
-;; smart-mode-line
-(setq sml/theme 'dark)
-(require 'smart-mode-line)
-(sml/setup)
-
 ;; moe-theme
 (require 'moe-dark-theme)
+
+;; smart-mode-line
+(require 'smart-mode-line)
+(sml/setup)
+(sml/apply-theme 'dark)
+
 ;; yas
 (require 'yasnippet)
 (yas-global-mode 1)
@@ -151,8 +175,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("8eef22cd6c122530722104b7c82bc8cdbb690a4ccdd95c5ceec4f3efa5d654f5" "31d3463ee893541ad572c590eb46dcf87103117504099d362eeed1f3347ab18f" "f3d2144fed1adb27794a45e61166e98820ab0bbf3cc7ea708e4bf4b57447ee27" "a2c537c981b4419aa3decac8e565868217fc2995b74e1685c5ff8c6d77b198d6" "31bfef452bee11d19df790b82dea35a3b275142032e06c6ecdc98007bf12466c" "2f80d6ea18d147a6b4e5b54801317b7789531c691edecfa2ab0d2972bee6b36d" default)))
-; '(eclim-eclipse-dirs (quote ("~/Softwares/eclipse-kepler")))
+ '(custom-safe-themes (quote ("6fe6ab4abe97a4f13533e47ae59fbba7f2919583f9162b440dd06707b01f7794" "025354235e98db5e7fd9c1a74622ff53ad31b7bde537d290ff68d85665213d85" "8eef22cd6c122530722104b7c82bc8cdbb690a4ccdd95c5ceec4f3efa5d654f5" "31d3463ee893541ad572c590eb46dcf87103117504099d362eeed1f3347ab18f" "f3d2144fed1adb27794a45e61166e98820ab0bbf3cc7ea708e4bf4b57447ee27" "a2c537c981b4419aa3decac8e565868217fc2995b74e1685c5ff8c6d77b198d6" "31bfef452bee11d19df790b82dea35a3b275142032e06c6ecdc98007bf12466c" "2f80d6ea18d147a6b4e5b54801317b7789531c691edecfa2ab0d2972bee6b36d" default)))
  '(haskell-mode-hook (quote (turn-on-haskell-indentation)))
  '(preview-image-type (quote dvipng)))
 
@@ -179,23 +202,6 @@
 (projectile-global-mode)
 
 
-;; auto-complete
-(require 'auto-complete-config)
- 
-(set-default 'ac-sources
-             '(ac-source-abbrev
-               ac-source-dictionary
-               ac-source-yasnippet
-               ac-source-words-in-buffer
-               ac-source-words-in-same-mode-buffers
-               ac-source-semantic))
- 
-(ac-config-default)
- 
-(dolist (m '(c-mode c++-mode java-mode))
-  (add-to-list 'ac-modes m))
- 
-(global-auto-complete-mode t)
 
 
 ;; eclim java
