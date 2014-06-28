@@ -74,6 +74,7 @@
 
 ;; flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
+
 ;; speedbar
 (require 'speedbar)
 (speedbar-add-supported-extension ".js")
@@ -92,6 +93,11 @@
 ; plantuml
 
 (setq plantuml-jar-path "/home/vihang/.plantuml/plantuml.jar")
+
+;; org-mode
+(setq org-agenda-files (list "~/org/work.org"
+                             "~/org/pers.org"))
+
 ;; active Org-babel languages
 (org-babel-do-load-languages
  'org-babel-load-languages
