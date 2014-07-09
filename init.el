@@ -212,6 +212,10 @@
 (projectile-global-mode)
 
 
+;; edit with emacs 
+(when (require 'edit-server nil t)
+    (setq edit-server-new-frame t)
+    (edit-server-start))
 
 
 ;; eclim java
