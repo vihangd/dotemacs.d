@@ -65,6 +65,7 @@
 
 ;; helm-mode
 (require 'helm-config)
+(helm-mode)
 (global-set-key (kbd "C-c h s") 'helm-semantic-or-imenu)
 (global-set-key (kbd "C-c h m") 'helm-man-woman)
 (global-set-key (kbd "C-c h f") 'helm-find)
