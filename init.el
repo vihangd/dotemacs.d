@@ -83,6 +83,9 @@
 (ac-flyspell-workaround)
 
 ;; clojure
+(add-hook 'clojure-mode-hook 'paredit-mode)
+(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
+
 (require 'cider)
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 (require 'ac-nrepl)
