@@ -77,6 +77,10 @@
 (define-key helm-map (kbd "C-x 3") 'helm-select-3rd-action)
 (define-key helm-map (kbd "C-x 4") 'helm-select-4rd-action)
 
+;; expand region
+(global-set-key (kbd "C-=") 'er/expand-region)
+(global-set-key (kbd "C--") 'er/contract-region)
+
 ;; flyspell
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 (add-hook 'text-mode-hook 'turn-on-flyspell)
