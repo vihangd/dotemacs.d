@@ -64,14 +64,9 @@
 (global-auto-complete-mode t)
 
 ;; helm-mode
+(setq helm-command-prefix-key "C-c h")
 (require 'helm-config)
 (helm-mode)
-(global-set-key (kbd "C-c h s") 'helm-semantic-or-imenu)
-(global-set-key (kbd "C-c h m") 'helm-man-woman)
-(global-set-key (kbd "C-c h f") 'helm-find)
-(global-set-key (kbd "C-c h l") 'helm-locate)
-(global-set-key (kbd "C-c h o") 'helm-occur)
-(global-set-key (kbd "C-c h r") 'helm-resume)
 
 (define-key helm-map (kbd "C-x 2") 'helm-select-2nd-action)
 (define-key helm-map (kbd "C-x 3") 'helm-select-3rd-action)
