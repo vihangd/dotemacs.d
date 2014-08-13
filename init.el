@@ -88,9 +88,9 @@
                                (clj-refactor-mode 1)))
 (require 'cider)
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
-(require 'ac-nrepl)
-(add-hook 'cider-repl-mode-hook 'ac-nrepl-setup)
-(add-hook 'cider-mode-hook 'ac-nrepl-setup)
+(require 'ac-cider)
+(add-hook 'cider-repl-mode-hook 'ac-cider-setup)
+(add-hook 'cider-mode-hook 'ac-cider-setup)
 (eval-after-load "auto-complete"
   '(add-to-list 'ac-modes 'cider-mode))
 
