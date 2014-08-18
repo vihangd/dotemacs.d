@@ -228,6 +228,16 @@
 (projectile-global-mode)
 
 
+;; diminish common modes
+(require 'diminish)
+(diminish 'abbrev-mode)
+(diminish 'projectile-mode)
+(diminish 'eldoc-mode)
+(eval-after-load 'flyspell '(diminish 'flyspell-mode (string 32 #x2708)))
+(diminish 'auto-fill-function (string 32 #xa7))
+(diminish 'isearch-mode (string 32 #x279c))
+
+
 ;; edit with emacs 
 (when (require 'edit-server nil t)
     (setq edit-server-new-frame t)
