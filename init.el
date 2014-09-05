@@ -81,6 +81,9 @@
 (add-hook 'text-mode-hook 'turn-on-flyspell)
 (ac-flyspell-workaround)
 
+;; Frege
+(add-to-list 'auto-mode-alist '("\\.fr$" . haskell-mode))
+
 ;; Standard Jedi.el setting
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
