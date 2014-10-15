@@ -45,6 +45,9 @@
 ;; recentf-mode
 (recentf-mode 1)
 
+;; line no mode
+(global-linum-mode t)
+
 ;; auto-complete
 (require 'auto-complete-config)
  
