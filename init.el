@@ -48,6 +48,10 @@
 ;; line no mode
 (global-linum-mode t)
 
+;; whitespace-cleanup
+(global-whitespace-cleanup-mode t)
+
+(global-auto-complete-mode t)
 ;; auto-complete
 (require 'auto-complete-config)
  
@@ -64,7 +68,7 @@
 (dolist (m '(c-mode c++-mode java-mode))
   (add-to-list 'ac-modes m))
  
-(global-auto-complete-mode t)
+
 
 ;; helm-mode
 (setq helm-command-prefix-key "C-c h")
