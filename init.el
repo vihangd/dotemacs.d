@@ -14,9 +14,20 @@
 
 
 ;font
-;(set-frame-font "Inconsolata-14")
-(set-default-font "Source Code Pro-13")
-;(set-default-font "Dejavu Sans Mono-12")
+(set-face-attribute 'default nil
+                    :family "Source Code Pro"
+                    :height 130
+                    :weight 'normal
+                    :width 'normal)
+
+(when (functionp 'set-fontset-font)
+  (set-fontset-font "fontset-default"
+                    'unicode
+                    (font-spec :family "DejaVu Sans Mono"
+                               :width 'normal
+                               :size 12.4
+                               :weight 'normal)))
+
 
 
 ;; taken from starter-kit
