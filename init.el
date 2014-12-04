@@ -12,6 +12,8 @@
  '(preview-image-type (quote dvipng))
  '(sml/theme (quote dark)))
 
+; fix utf characters in the message buffer
+(setq default-process-coding-system '(utf-8-unix . utf-8-unix))
 
 ;font
 (set-face-attribute 'default nil
