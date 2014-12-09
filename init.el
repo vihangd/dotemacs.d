@@ -160,7 +160,8 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '(;; other Babel languages
-   (plantuml . t)))
+   (plantuml . t)
+   (C . t)))
 
 (setq org-plantuml-jar-path
       (expand-file-name "~/.plantuml/plantuml.jar"))
