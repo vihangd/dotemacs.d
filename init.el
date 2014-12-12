@@ -81,7 +81,9 @@
 (dolist (m '(c-mode c++-mode java-mode))
   (add-to-list 'ac-modes m))
  
-
+;; emr
+(define-key prog-mode-map (kbd "M-RET") 'emr-show-refactor-menu)
+(add-hook 'prog-mode-hook 'emr-initialize)
 
 ;; helm-mode
 (setq helm-command-prefix-key "C-c h")
