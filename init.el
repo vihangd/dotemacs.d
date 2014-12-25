@@ -276,6 +276,9 @@
     (setq edit-server-new-frame t)
     (edit-server-start))
 
+;; Load custom functions
+(add-to-list 'load-path "~/.emacs.d/")
+(require 'custom-functions)
 
 ;; eclim java
 ;; (require 'eclim)
