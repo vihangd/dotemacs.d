@@ -58,9 +58,6 @@
 ;; recentf-mode
 (recentf-mode 1)
 
-;; line no mode
-(global-linum-mode t)
-
 ;; whitespace-cleanup
 (global-whitespace-cleanup-mode t)
 
