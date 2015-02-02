@@ -241,6 +241,12 @@
 ;; (require 'ensime)
 ;; (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
+
+;; jedi for python
+
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)
+
 ;; webmode
 (add-hook 'web-mode-hook (lambda () (whitespace-mode -1)))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
