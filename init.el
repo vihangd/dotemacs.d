@@ -245,9 +245,9 @@
 
 
 ;; jedi for python
-
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
+(setq jedi:use-shortcuts t)
 
 ;; webmode
 (add-hook 'web-mode-hook (lambda () (whitespace-mode -1)))
