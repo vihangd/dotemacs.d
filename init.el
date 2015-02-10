@@ -118,6 +118,10 @@
   '(define-key python-mode-map "\C-cx" 'jedi-direx:pop-to-buffer))
 (add-hook 'jedi-mode-hook 'jedi-direx:setup)
 
+;; hy - python lisp
+(add-hook 'hy-mode-hook 'paredit-mode)
+(add-hook 'hy-mode-hook 'rainbow-delimiters-mode)
+
 ;; clojure
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
