@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Custom code
 ;;; Code:
+(require 'projectile)
 
 (defun appengine-server-start ()
   "Start appengine python server."
