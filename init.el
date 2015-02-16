@@ -156,7 +156,7 @@
 ;; shell
 (exec-path-from-shell-initialize)
 (setenv "LD_LIBRARY_PATH" "/home/vihang/.linuxbrew/lib")
-(setq exec-path (append exec-path '("/home/vihang/.nvm/v0.10.22/bin")))
+(setq exec-path (append exec-path '("/home/vihang/.nvm/v0.12.0/bin")))
 (setq exec-path (append exec-path '("/home/vihang/.linuxbrew/bin")))
 
 (setenv "GROOVY_HOME" "/home/vihang/.linuxbrew/opt/groovy/libexec")
