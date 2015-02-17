@@ -277,6 +277,12 @@
 ;; enable tern for js2-mode
 (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
 
+;; use tern for auto-complete
+(eval-after-load 'tern
+   '(progn
+      (require 'tern-auto-complete)
+      (tern-ac-setup)))
+
 ;; project navigation
 (projectile-global-mode)
 
