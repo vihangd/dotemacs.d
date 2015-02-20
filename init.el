@@ -169,12 +169,15 @@
 (setq org-agenda-files (list "~/org/work.org"
                              "~/org/pers.org"))
 
+(setq-default org-src-fontify-natively t)
+
 ;; active Org-babel languages
 (org-babel-do-load-languages
  'org-babel-load-languages
  '(;; other Babel languages
    (plantuml . t)
-   (C . t)))
+   (C . t)
+   (ditaa. t)))
 
 (setq org-plantuml-jar-path
       (expand-file-name "~/.plantuml/plantuml.jar"))
