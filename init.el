@@ -177,7 +177,7 @@
  '(;; other Babel languages
    (plantuml . t)
    (C . t)
-   (ditaa. t)))
+   (ditaa . t)))
 
 (setq org-plantuml-jar-path
       (expand-file-name "~/.plantuml/plantuml.jar"))
