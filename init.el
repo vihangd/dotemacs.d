@@ -109,7 +109,9 @@
 (ac-flyspell-workaround)
 
 ;; Frege
-(add-to-list 'auto-mode-alist '("\\.fr$" . haskell-mode))
+(use-package haskell-mode
+  :mode "\\.fr\\'")
+
 
 ;; Standard Jedi.el setting
 (add-hook 'python-mode-hook 'jedi:setup)
@@ -229,26 +231,29 @@
 (require 'moe-dark-theme)
 
 ;; smart-mode-line
-(require 'smart-mode-line)
-(sml/setup)
-(sml/apply-theme 'dark)
+(use-package smart-mode-line
+  :init (progn
+          (sml/setup)
+          (sml/apply-theme 'dark)))
 
 ;; yas
-(require 'yasnippet)
-(yas-global-mode 1)
+(use-package yasnippet
+  :defer t
+  :config (yas-global-mode 1))
+
 ;; ace-jump
-(require 'ace-jump-mode)
-(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+(use-package ace-jump-mode
+  :bind  ("C-c SPC" . ace-jump-mode))
 
 ;; imenu-anywhere
 (global-set-key (kbd "C-.") 'imenu-anywhere)
 
 ;; enable smex
-(require 'smex)
-(smex-initialize)
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+(use-package smex
+  :config (smex-initialize)
+  :bind (("M-x" . smex)
+         ("M-X" . smex-major-mode-commands)
+         ("C-c C-c M-x" . execute-extended-command)))
 
 
 
