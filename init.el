@@ -100,8 +100,9 @@
 (define-key helm-map (kbd "C-x 4") 'helm-select-4rd-action)
 
 ;; expand region
-(global-set-key (kbd "C-=") 'er/expand-region)
-(global-set-key (kbd "C--") 'er/contract-region)
+(use-package expand-region
+  :bind (("C-=" . er/expand-region)
+         ("C--" . er/contract-region)))
 
 ;; flyspell
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
