@@ -223,7 +223,7 @@
 ;; (sr-speedbar-open)
 
 ;; moe-theme
-(require 'moe-dark-theme)
+(use-package moe-dark-theme)
 
 ;; smart-mode-line
 (use-package smart-mode-line
@@ -241,7 +241,8 @@
   :bind  ("C-c SPC" . ace-jump-mode))
 
 ;; imenu-anywhere
-(global-set-key (kbd "C-.") 'imenu-anywhere)
+(use-package imenu-anywhere
+  :bind ("C-." . imenu-anywhere))
 
 ;; enable smex
 (use-package smex
@@ -260,35 +261,45 @@
 
 
 ;; jedi for python
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
-(setq jedi:use-shortcuts t)
+(use-package jedi
+  :init (progn
+          (add-hook 'python-mode-hook 'jedi:setup)
+          (add-hook 'jedi-mode-hook 'jedi-direx:setup)
+          (setq jedi:complete-on-dot t)
+          (setq jedi:use-shortcuts t)))
 
-;; webmode
-(add-hook 'web-mode-hook (lambda () (whitespace-mode -1)))
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-(add-hook 'web-mode-hook 'zencoding-mode) 
+;; web-mode
+(use-package web-mode
+  :mode "\\.html?\\'"
+  :init (progn
+          (add-hook 'web-mode-hook (lambda () (whitespace-mode -1)))
+          (add-hook 'web-mode-hook 'zencoding-mode) ))
 
 ;; multiple-cursors
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(use-package multiple-cursors
+  :bind (("C->" . mc/mark-next-like-this)
+         ("C-<" . mc/mark-previous-like-this)
+         ("C-c C-<" . mc/mark-all-like-this)))
 
 ;; js2--mode
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(use-package js2-mode
+  :mode "\\.js\\'")
 
 ;; enable tern for js2-mode
-(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
+(use-package tern-mode
+  :commands tern-mode
+  :init (progn 
+          (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
+          (eval-after-load 'tern
+            '(progn
+               (use-package tern-auto-complete
+                 :init (tern-ac-setup))))))
 
-;; use tern for auto-complete
-(eval-after-load 'tern
-   '(progn
-      (require 'tern-auto-complete)
-      (tern-ac-setup)))
 
 ;; project navigation
-(projectile-global-mode)
-
+(use-package projectile
+  :diminish projectile-mode
+  :init (projectile-global-mode))
 
 ;; diminish common modes
 (require 'diminish)
