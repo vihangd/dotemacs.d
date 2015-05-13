@@ -317,7 +317,7 @@
     (edit-server-start))
 
 ;; Load custom functions
-(add-to-list 'load-path "~/.emacs.d/")
+(add-to-list 'load-path "~/.emacs.d/lisp")
 (require 'custom-functions)
 
 ;; eclim java
