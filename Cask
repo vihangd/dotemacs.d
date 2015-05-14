@@ -76,7 +76,6 @@
 (depends-on "tracking")
 (depends-on "vala-mode")
 (depends-on "web-mode")
-(depends-on "weechat")
 (depends-on "writegood-mode")
 (depends-on "yasnippet")
 (depends-on "yaxception")
