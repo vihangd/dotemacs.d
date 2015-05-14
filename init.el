@@ -43,7 +43,7 @@
 ;; (add-to-list 'package-archives
 ;;   '("geiser" . "http://mirror.veriportal.com/savannah//geiser/packages/"))
 
-(require 'cask "~/.linuxbrew/Cellar/cask/0.7.2/cask.el")
+(require 'cask "~/.cask/cask.el")
 (cask-initialize)
 (require 'pallet)
 
