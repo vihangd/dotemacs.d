@@ -47,6 +47,9 @@
 (cask-initialize)
 (require 'pallet)
 
+(eval-when-compile
+  (require 'use-package))
+
 ;(package-initialize)
 
 ;; eshell
