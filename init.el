@@ -56,7 +56,7 @@
 (setq eshell-review-quick-commands nil)
 (setq eshell-smart-space-goes-to-end t)
 
-
+(setq magit-auto-revert-mode nil)
 ;; recentf-mode
 (recentf-mode 1)
 
