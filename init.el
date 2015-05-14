@@ -29,6 +29,8 @@
 ;; taken from starter-kit
 (defalias 'yes-or-no-p 'y-or-n-p)
 (defalias 'auto-tail-revert-mode 'tail-mode)
+(setq mac-command-modifier 'meta)
+(setq ring-bell-function 'ignore)
 
 ;; compilation scroll
 (setq compilation-scroll-output 'first-error)
