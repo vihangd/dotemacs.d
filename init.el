@@ -32,6 +32,8 @@
 (setq mac-command-modifier 'meta)
 (setq ring-bell-function 'ignore)
 
+;; use system trash
+(setq delete-by-moving-to-trash t)
 ;; compilation scroll
 (setq compilation-scroll-output 'first-error)
 ;;
