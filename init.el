@@ -56,6 +56,11 @@
 
 ;(package-initialize)
 
+;evil mode
+(use-package :evil-mode
+  :commands evil-mode
+  :init (evil-mode t))
+
 ;; eshell
 (require 'eshell)
 (require 'em-smart)
