@@ -59,7 +59,18 @@
 ;evil mode
 (use-package :evil-mode
   :commands evil-mode
-  :init (evil-mode t))
+  :init
+  (progn
+    (evil-mode t)
+    (use-package evil-numbers)
+    (use-package evil-paredit
+      :init (add-hook 'paredit-mode-hook 'evil-paredit-mode))
+    (use-package evil-surround
+      :init (global-evil-surround-mode 1)
+      :config
+      (progn
+        (add-to-list 'evil-surround-operator-alist '(evil-paredit-change . change))
+        (add-to-list 'evil-surround-operator-alist '(evil-paredit-delete . delete))))))
 
 ;; eshell
 (require 'eshell)
