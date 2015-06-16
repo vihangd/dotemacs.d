@@ -73,11 +73,11 @@
         (add-to-list 'evil-surround-operator-alist '(evil-paredit-delete . delete))))))
 
 ;; eshell
-(require 'eshell)
-(require 'em-smart)
-(setq eshell-where-to-jump 'begin)
-(setq eshell-review-quick-commands nil)
-(setq eshell-smart-space-goes-to-end t)
+(use-package eshell
+  :config (progn (setq eshell-where-to-jump 'begin)
+                 (setq eshell-review-quick-commands nil)
+                 (setq eshell-smart-space-goes-to-end t)))
+(use-package em-smart)
 
 (setq magit-auto-revert-mode nil)
 ;; recentf-mode
