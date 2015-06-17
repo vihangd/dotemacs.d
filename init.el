@@ -70,7 +70,13 @@
       :config
       (progn
         (add-to-list 'evil-surround-operator-alist '(evil-paredit-change . change))
-        (add-to-list 'evil-surround-operator-alist '(evil-paredit-delete . delete))))))
+        (add-to-list 'evil-surround-operator-alist '(evil-paredit-delete . delete))))
+    (use-package evil-leader
+      :init (global-evil-leader-mode)
+      :config
+      (progn
+        (evil-leader/set-leader ",")))
+    (use-package evil-org)))
 
 ;; eshell
 (use-package eshell
