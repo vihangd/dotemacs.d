@@ -54,7 +54,7 @@
 
 (eval-when-compile
   (require 'use-package))
-
+(require 'bind-key)                ;; if you use any :bind variant
 ;(package-initialize)
 
 ;evil mode
