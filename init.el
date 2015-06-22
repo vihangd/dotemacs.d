@@ -63,7 +63,11 @@
   :init
   (progn
     (evil-mode t)
-    (use-package evil-numbers)
+    (use-package evil-numbers
+      :config
+      (progn
+        (define-key evil-normal-state-map (kbd "C-c +") 'evil-numbers/inc-at-pt)
+        (define-key evil-normal-state-map (kbd "C-c -") 'evil-numbers/dec-at-pt)))
     (use-package evil-paredit
       :init (add-hook 'paredit-mode-hook 'evil-paredit-mode))
     (use-package evil-surround
