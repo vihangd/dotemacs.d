@@ -63,6 +63,8 @@
   :init
   (progn
     (evil-mode t)
+    (use-package evil-matchit
+      :init (global-evil-matchit-mode 1))
     (use-package evil-numbers
       :config
       (progn
