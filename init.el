@@ -121,13 +121,14 @@
 (add-hook 'prog-mode-hook 'emr-initialize)
 
 ;; helm-mode
-(setq helm-command-prefix-key "C-c h")
-(require 'helm-config)
-(helm-mode)
+(use-package :helm
+  :init (progn
+          (require 'helm-config)
+          (helm-mode))
+  :bind (("C-c h" . helm-mini)
+         ("C-h a" . helm-apropos)
+         ("C-x C-b" . helm-buffers-list)))
 
-(define-key helm-map (kbd "C-x 2") 'helm-select-2nd-action)
-(define-key helm-map (kbd "C-x 3") 'helm-select-3rd-action)
-(define-key helm-map (kbd "C-x 4") 'helm-select-4rd-action)
 
 ;; expand region
 (use-package expand-region
