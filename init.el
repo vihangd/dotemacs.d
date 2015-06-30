@@ -212,6 +212,7 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '(;; other Babel languages
+   (python . t)
    (plantuml . t)
    (C . t)
    (ditaa . t)))
@@ -391,9 +392,3 @@
 ;; Do setting recommemded configuration
 ;(tss-config-default)
 
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
