@@ -153,8 +153,11 @@
 (add-hook 'jedi-mode-hook 'jedi-direx:setup)
 
 ;; hy - python lisp
-(add-hook 'hy-mode-hook 'paredit-mode)
-(add-hook 'hy-mode-hook 'rainbow-delimiters-mode)
+(use-package hy-mode
+  :config
+  (progn
+    (add-hook 'hy-mode-hook 'paredit-mode)
+    (add-hook 'hy-mode-hook 'rainbow-delimiters-mode)))
 
 ;; clojure
 (add-hook 'clojure-mode-hook 'paredit-mode)
