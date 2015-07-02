@@ -101,20 +101,18 @@
 
 (global-auto-complete-mode t)
 ;; auto-complete
-(require 'auto-complete-config)
- 
-(set-default 'ac-sources
+(use-package auto-complete-config
+  :commands ac-config-default
+  :init (ac-config-default)
+  :config (progn (set-default 'ac-sources
              '(ac-source-abbrev
                ac-source-dictionary
                ac-source-yasnippet
                ac-source-words-in-buffer
                ac-source-words-in-same-mode-buffers
                ac-source-semantic))
- 
-(ac-config-default)
- 
-(dolist (m '(c-mode c++-mode java-mode))
-  (add-to-list 'ac-modes m))
+                 (dolist (m '(c-mode c++-mode java-mode))
+                   (add-to-list 'ac-modes m))))
  
 ;; emr
 (define-key prog-mode-map (kbd "M-RET") 'emr-show-refactor-menu)
