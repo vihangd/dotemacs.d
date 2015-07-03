@@ -115,8 +115,11 @@
                    (add-to-list 'ac-modes m))))
  
 ;; emr
-(define-key prog-mode-map (kbd "M-RET") 'emr-show-refactor-menu)
-(add-hook 'prog-mode-hook 'emr-initialize)
+(use-package emr
+  :init
+  (progn 
+    (define-key prog-mode-map (kbd "M-RET") 'emr-show-refactor-menu)
+    (add-hook 'prog-mode-hook 'emr-initialize)))
 
 ;; helm-mode
 (use-package :helm
