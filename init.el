@@ -161,19 +161,29 @@
     (add-hook 'hy-mode-hook 'rainbow-delimiters-mode)))
 
 ;; clojure
-(add-hook 'clojure-mode-hook 'paredit-mode)
-(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'clojure-mode-hook (lambda ()
-                               (clj-refactor-mode 1)
-                               (cljr-add-keybindings-with-prefix "C-c C-m")
-                               ))
-(require 'cider)
-(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
-(require 'ac-cider)
-(add-hook 'cider-repl-mode-hook 'ac-cider-setup)
-(add-hook 'cider-mode-hook 'ac-cider-setup)
-(eval-after-load "auto-complete"
-  '(add-to-list 'ac-modes 'cider-mode))
+(use-package clojure-mode
+  :config
+  (progn
+    (add-hook 'clojure-mode-hook 'paredit-mode)
+    (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
+    (add-hook 'clojure-mode-hook (lambda ()
+                                   (clj-refactor-mode 1)
+                                   (cljr-add-keybindings-with-prefix "C-c C-m")
+                                   ))))
+
+(use-package cider
+  :commands cider-turn-on-eldoc-mode 
+  :init (progn (eldoc-mode 1)
+                 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)))
+
+(use-package ac-cider
+  :commands ac-cider-setup
+  :config
+  (progn
+    (add-hook 'cider-repl-mode-hook 'ac-cider-setup)
+    (add-hook 'cider-mode-hook 'ac-cider-setup)
+    (eval-after-load "auto-complete"
+      '(add-to-list 'ac-modes 'cider-mode))))
 
 ;; discover
 (use-package discover
