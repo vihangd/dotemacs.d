@@ -195,13 +195,6 @@
 ;; flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
-;; speedbar
-(require 'speedbar)
-(speedbar-add-supported-extension ".js")
-(speedbar-add-supported-extension ".coffee")
-(add-to-list 'speedbar-fetch-etags-parse-list
-             '("\\.js" . speedbar-parse-c-or-c++tag))
-
 ;; shell
 (exec-path-from-shell-initialize)
 (setenv "LD_LIBRARY_PATH" "/home/vihang/.linuxbrew/lib")
@@ -372,18 +365,6 @@
 ;; Load custom functions
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (require 'custom-functions)
-
-;; eclim java
-;; (require 'eclim)
-;; (global-eclim-mode)
-;; (require 'eclimd)
-;; ;; add the emacs-eclim source
-;; (require 'ac-emacs-eclim-source)
-;; (ac-emacs-eclim-config)
-;; ;; display error echo
-;; (setq help-at-pt-display-when-idle t)
-;; (setq help-at-pt-timer-delay 0.1)
-;; (help-at-pt-set-timer)
 
 ;; If use bundled typescript.el,
 ;; (require 'typescript)
