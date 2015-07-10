@@ -225,6 +225,10 @@
 (setq org-plantuml-jar-path
       (expand-file-name "~/.plantuml/plantuml.jar"))
 
+;; jira integration
+(use-package org-jira
+  :init (setq jiralib-url "https://jira.corp.inmobi.com"))
+
 
 ;; ;; emacs visual
 ;; (menu-bar-mode 1)
