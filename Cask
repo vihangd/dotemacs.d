@@ -82,6 +82,8 @@
 (depends-on "shut-up")
 (depends-on "smart-mode-line")
 (depends-on "smex")
+(depends-on "tern")
+(depends-on "tern-auto-complete")
 (depends-on "tracking")
 (depends-on "use-package")
 (depends-on "vala-mode")
