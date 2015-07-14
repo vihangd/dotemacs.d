@@ -59,6 +59,8 @@
 (depends-on "imenu-anywhere")
 (depends-on "inf-groovy")
 (depends-on "inf-ruby")
+(depends-on "jedi")
+(depends-on "jedi-core")
 (depends-on "js2-mode")
 (depends-on "js2-refactor")
 (depends-on "log4e")
