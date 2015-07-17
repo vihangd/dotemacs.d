@@ -29,8 +29,16 @@
 ;; taken from starter-kit
 (defalias 'yes-or-no-p 'y-or-n-p)
 (defalias 'auto-tail-revert-mode 'tail-mode)
-(setq mac-command-modifier 'meta)
-(setq ring-bell-function 'ignore)
+
+(global-hl-line-mode)
+(setq visible-bell t
+      inhibit-startup-message t
+      ediff-window-setup-function 'ediff-setup-windows-plain
+      oddmuse-directory (concat user-emacs-directory "oddmuse")
+      diff-switches "-u"
+      mac-command-modifier 'meta
+      ring-bell-function 'ignore)
+
 
 ;; use system trash
 (setq delete-by-moving-to-trash t)
@@ -146,13 +154,6 @@
   :mode "\\.fr\\'")
 
 
-;; Standard Jedi.el setting
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
-(eval-after-load "python"
-  '(define-key python-mode-map "\C-cx" 'jedi-direx:pop-to-buffer))
-(add-hook 'jedi-mode-hook 'jedi-direx:setup)
-
 ;; hy - python lisp
 (use-package hy-mode
   :config
@@ -233,45 +234,6 @@
 ;; ;; emacs visual
 ;; (menu-bar-mode 1)
 ;; (tool-bar-mode nil)
-
-(global-hl-line-mode)
-(setq visible-bell t
-      inhibit-startup-message t
-      ediff-window-setup-function 'ediff-setup-windows-plain
-      oddmuse-directory (concat user-emacs-directory "oddmuse")
-      diff-switches "-u")
-
-
-;; sr-speedbar
-;; (require 'sr-speedbar)
-;; (global-set-key (kbd "s-s") 'sr-speedbar-toggle)
-
-;; left-side pane
-;; (setq sr-speedbar-right-side nil)
-
-;; turn off the ugly icons
-;; (setq speedbar-use-images nil)
-;; (setq speedbar-frame-parameters
-;;       '((minibuffer)
-;; 	(border-width . 0)
-;; 	(menu-bar-lines . 0)
-;; 	(tool-bar-lines . 0)
-;; 	(unsplittable . t)
-;; 	(left-fringe . 0)))
-
-;; (setq sr-speedbar-max-width 40) 
-;; (setq sr-speedbar-width 35) 
-;; (setq sr-speedbar-width-x 25)
-;; (sr-speedbar-remember-window-width)
-
-;; fix speedbar in left, and set auto raise mode 
-;; (add-hook 'speedbar-mode-hook 
-;;     (lambda () 
-;;         (auto-raise-mode 1) 
-;;         (add-to-list 'speedbar-frame-parameters '(top . 40)) 
-;;         (add-to-list 'speedbar-frame-parameters '(left . 0))))
-;; (sr-speedbar-open)
-
 ;; moe-theme
 (use-package moe-dark-theme)
 
