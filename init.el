@@ -191,7 +191,8 @@
   :commands global-discover-mode
   :config (global-discover-mode 1))
 ;; js2-refactor
-(js2r-add-keybindings-with-prefix "C-c C-m")
+(use-package js2-refactor
+  :config (js2r-add-keybindings-with-prefix "C-c C-m"))
 
 ;; flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
