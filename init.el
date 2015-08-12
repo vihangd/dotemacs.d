@@ -60,6 +60,21 @@
 (require 'pallet)
 (pallet-mode t)
 
+;; pin important packages to melpa-stable
+(setq package-pinned-packages
+      '((cider            . "melpa-stable")
+        (ac-cider         . "melpa-stable")
+        (evil             . "melpa-stable")
+        (evil-leader      . "melpa-stable")
+        (evil-matchit     . "melpa-stable")
+        (evil-org         . "melpa-stable")
+        (evil-tutor       . "melpa-stable")
+        (evil-visualstar  . "melpa-stable")
+        (evil-visual-mark . "melpa-stable")
+        (py-autopep8      . "melpa-stable")
+        (web-mode         . "melpa-stable")
+        (clj-refactor     . "melpa-stable")))
+
 (eval-when-compile
   (require 'use-package))
 (require 'bind-key)                ;; if you use any :bind variant
