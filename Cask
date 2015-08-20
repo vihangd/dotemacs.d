@@ -1,7 +1,7 @@
 (source gnu)
 (source marmalade)
 (source melpa)
-(source org)
+(source melpa-stable)
 
 (depends-on "4clojure")
 (depends-on "ac-cider-compliment")
