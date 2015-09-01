@@ -297,6 +297,11 @@
           (setq jedi:complete-on-dot t)
           (setq jedi:use-shortcuts t)))
 
+;; python-env
+(use-package python-environment
+  :config (setq python-environment-directory "~/.Envs"))
+
+
 ;; web-mode
 (use-package web-mode
   :mode "\\.html?\\'"
