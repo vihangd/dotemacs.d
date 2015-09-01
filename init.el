@@ -294,6 +294,9 @@
   :init (progn
           (add-hook 'python-mode-hook 'jedi:setup)
           (add-hook 'jedi-mode-hook 'jedi-direx:setup)
+          (add-hook 'jedi-mode-hook
+                    (lambda () (remove-hook 'after-change-functions
+                                            'jedi:after-change-handler t)))
           (setq jedi:complete-on-dot t)
           (setq jedi:use-shortcuts t)))
 
