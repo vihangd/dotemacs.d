@@ -288,21 +288,31 @@
 ;; (require 'ensime)
 ;; (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
-
-;; jedi for python
-(use-package jedi
+(use-package pungi
+  :commands pungi:setup-jedi
   :init (progn
-          (add-hook 'python-mode-hook 'jedi:setup)
-          (add-hook 'jedi-mode-hook 'jedi-direx:setup)
-          (add-hook 'jedi-mode-hook
-                    (lambda () (remove-hook 'after-change-functions
-                                            'jedi:after-change-handler t)))
+          (add-hook 'python-mode-hook 'pungi:setup-jedi))
+  :config (progn
           (setq jedi:complete-on-dot t)
           (setq jedi:use-shortcuts t)))
 
+
+;; jedi for python
+;; (use-package jedi
+;;   :init (progn
+;;           (setq jedi:complete-on-dot t)
+;;           (setq jedi:use-shortcuts t)))
+
 ;; python-env
 (use-package python-environment
-  :config (setq python-environment-directory "~/.Envs"))
+  :config (setq python-environment-directory "~/.virtualenvs"))
+
+;; traad python rope refactoring
+(use-package traad
+  :commands traad-install-server
+  :config (progn (setq traad-environment-root "traad")
+                 (setq traad-environment-virtualenv '("virtualenv-2.7")))
+  :init (traad-install-server))
 
 
 ;; web-mode
