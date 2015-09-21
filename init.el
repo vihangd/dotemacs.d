@@ -235,6 +235,7 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '(;; other Babel languages
+   (sh . t)
    (python . t)
    (plantuml . t)
    (C . t)
