@@ -239,7 +239,8 @@
    (python . t)
    (plantuml . t)
    (C . t)
-   (ditaa . t)))
+   (ditaa . t)
+   (scheme . t)))
 
 (setq org-plantuml-jar-path
       (expand-file-name "~/.plantuml/plantuml.jar"))
